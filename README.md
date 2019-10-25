@@ -3,7 +3,7 @@
 
 Voici le projet en React sur lequel j'ai travailler en équipe en 4 .
 Ce qu'il faut savoir c'est que j'étais dans la team back et que je me suis occupé de l'API et je suis intervenu coté front au bout de la deuxieme semaine de travail .
-Durant la phase de développement en équipe j'ai travailler principalement sur les pages mineurs car j'avais à la base appris Réact afin de faire un test avec symfony pour consommé mon faite en symfony API afin de faire un login , un signup avec envoie de mail , c'était le tout premier objective d'avant projet que je m'étais fixé car durant la spécialisation nous avons vue uniquement comment faire un site de A à Z en full Symfony ce qui fait que nous avions tous une lacune à combler sur ce point la voici le lien de mon tout premier travail en Réact => https://github.com/kevP-Sirius/react-login-test-API . 
+Durant la phase de développement en équipe j'ai travailler principalement sur les pages mineurs car j'avais à la base appris Réact afin de faire un test avec symfony pour consommé mon faite en symfony API afin de faire un login , un signup avec envoie de mail , c'était le tout premier objective d'avant-projet que je m'étais fixé car durant la spécialisation nous avons vue uniquement comment faire un site de A à Z en full Symfony ce qui fait que nous avions tous une lacune à combler sur ce point la voici le lien de mon tout premier travail en Réact => https://github.com/kevP-Sirius/react-login-test-API . 
 Mais vous pouvez me contacter afin que je vous ajoute dans la liste des collaborateurs , sachant que ce que j'ai fait en terme de formulaire pure je l'ai réutilisé dans mon projet dans la page contact (React Router en moins ). 
 
 
