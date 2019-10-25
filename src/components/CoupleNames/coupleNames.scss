@@ -1,0 +1,28 @@
+@import 'src/styles/reset';
+@import 'src/styles/vars';
+
+#coupleNames {    
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50%;
+    margin: 2em auto;
+    .maried {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      
+    }
+    button {
+      width: 35%;
+      margin: 2em auto;
+      color: #144956;
+      background-color: transparentize($color: #DEE4DD, $amount: 0.3);
+      border: 1px solid #144956;
+      border-radius: 15px;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 1em;
+    }
+  }
+}

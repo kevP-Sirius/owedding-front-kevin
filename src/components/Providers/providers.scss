@@ -1,0 +1,87 @@
+@import 'src/styles/reset';
+@import 'src/styles/vars';
+
+@font-face {
+  font-family: 'alsscrp';
+  src: url('../../assets/fonts/alsscrp.ttf');
+}
+
+#providers {
+  @include Dashboard-width;
+  .navBudget {
+    @include Dashboard-nav;
+  }
+  .providersBoard {
+    @include Dashboard;      
+    font-size: 1.2em;    
+    .homeIcons {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto; 
+        width: 100%;
+        // align-content: center;
+        font-size: 1em;
+        font-weight: 800;
+        .iconHome {
+          margin: 1em;
+          width: 20%;
+          padding-bottom: 2.6em;
+          background-color: #DEE4DD;
+          border: 1px #144956 solid;
+          border-radius: 10px;  
+          &:hover {
+            animation: Box-scale  ease; 
+            animation-duration: 1s;   
+          }
+          .imagedj {
+            @include itemImage;
+            background-image: url(../../assets/images/prestaDj.jpg); 
+          }
+          .imagetraiteur {
+            @include itemImage;
+            background-image: url(../../assets/images/prestaTraiteur.jpg);     
+          }
+          .imagesalle {
+            @include itemImage;
+            background-image: url(../../assets/images/prestaSalle.jpg);          
+          }
+          .imagealliances {
+            @include itemImage;
+            background-image: url(../../assets/images/budget.jpg);         
+          }
+          .imagetailleur {
+            @include itemImage;
+            background-image: url(../../assets/images/prestaTailleur.jpg);         
+          }
+          .imageanim {
+            @include itemImage;
+            background-image: url(../../assets/images/prestaAnim.jpg);         
+          }
+          .imagevehicule {
+            @include itemImage;
+            background-image: url(../../assets/images/prestaCar.jpg);         
+          }
+
+          
+
+          .itemText {
+            font-size: 1em;
+            //border-bottom: 1px #144956 solid;
+            //padding-bottom: 1em;
+            padding-top: 1em;
+            margin: 1em 1em 0;   
+            height: 3em;       
+          }
+          .itemDescription {
+            padding: 0 1em 1em 1em;
+            font-size: 1em;
+          }
+        }
+      }
+  }
+}
+
+
+

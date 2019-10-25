@@ -1,0 +1,56 @@
+@import 'src/styles/reset';
+@import 'src/styles/vars';
+
+#auth {
+  position: fixed;
+  background-image: url(../../../src/assets/images/BackgroundT.png);
+  background-size: contain;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1em;
+  right: 1%;
+  top: 1%;
+  min-height: 25%;
+  width: 22%;
+  z-index: 2;
+  box-shadow: 0 0 10px rgba(0,0,0,.5);
+  padding: 1em;
+  animation: open .5s;
+   .authIconClose {
+       cursor: pointer;
+    }
+  form {   
+    .mdpForgotten {
+      cursor: pointer;
+    }
+    .errorMessage {
+      display: block;
+      margin: .6em auto 0;
+      font-weight: bolder;
+      color:  #144956;
+      width: 70%;
+    }
+    button {
+        @include buttonForAuth;
+        width: 60%;
+        height: 2.9em;
+    }
+  }
+
+  .redirection {
+    font-size: 1em;
+    &:hover {
+      text-decoration: none;
+      color:#D0ADBA;
+    }  
+    
+  }
+}
+  #googleLogin{
+    width: 100%;
+    height: 100%;
+  }
+
+@keyframes open {
+  from { transform:translateX(100%); }
+  to { transform:translateX(0); }
+}

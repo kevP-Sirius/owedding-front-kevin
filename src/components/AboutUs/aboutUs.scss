@@ -1,0 +1,80 @@
+#aboutus {
+  margin: auto;
+  
+  strong {
+    font-weight: bold;
+  }
+  .intro {
+  width: 50%;
+  margin: 2rem auto;
+  font-size: 1.4rem;
+  text-align: justify;
+  color: #144956;
+  font-family: 'Josefin Sans', sans-serif;
+  }
+
+  p {
+    margin-top: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .contact {
+    font-weight: bold;
+    color: #144956;
+
+  }
+
+  .far.fa-smile {
+    color: #144956;
+  }
+ 
+  .row {
+    max-width: 90%;
+    margin: 6rem; 
+  }
+
+  .card {
+    text-align: center;
+    border-radius: 1em;
+    width: 19rem;
+    height: auto;
+    border:  2px solid #DEE4DD;
+    
+  }
+
+  .card-body {
+    // padding-bottom: 0.5em;
+    color: #144956;
+    background-color: #DEE4DD;
+    
+  }
+
+  .card-img-top {
+    width: 13em;
+    height: 13em;
+    border-radius: 50%;
+    border: 0.2em solid #144956;
+    margin: auto;
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+  }
+
+  .card-header {
+    border-bottom-right-radius: 0.9em;
+    border-bottom-left-radius: 0.9em;
+    color: #144956;
+    background-color: #DEE4DD;
+    font-weight: bold;
+    padding-bottom: 3rem;
+    font-size: 1rem;
+   
+  }
+
+  .h5 {
+    font-weight: bold;
+  }
+
+  img {
+    object-fit: cover;
+  }
+}

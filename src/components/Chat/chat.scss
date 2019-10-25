@@ -1,0 +1,306 @@
+@import 'src/styles/reset';
+@import 'src/styles/vars';
+
+
+
+/* chat mercure */
+
+#flexContainer {
+
+  display: flex;
+  justify-content: space-between;
+
+}
+.wrapper-message { 
+
+  font: 18px/1.5 sans-serif;
+
+}
+.wrapper-messager code {
+
+  background: #F5F5F5;
+  padding: 2px 6px;
+}
+
+#ui{
+  
+  border-color: teal;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: #e1e6e0;
+  border-top: 3px solid #1b4e5b;
+  border-radius: 5px;
+  box-shadow: 10px 5px 20px #aaa;
+  padding: 20px 20px 20px 20px;
+  border-bottom:10px; 
+  width: 95%;
+  margin-left: 2.5rem;
+  margin-top: 2.5rem;
+   
+}
+
+#ui input {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid #1b4e5b;
+}
+
+#ui label {
+    margin-right: 1rem;
+    margin-top: 1rem;
+}
+#conversation {
+
+   background-color: #e1e6e0;
+   border-top: 3px solid #1b4e5b;
+   border-radius: 5px;
+   box-shadow: 10px 5px 20px #aaa;
+   padding: 50px 50px;
+   border-bottom:10px;
+   width: 600px;
+   height: 400px;
+   overflow: auto;
+   font-size:10px;
+   margin-left: 2.5rem;
+   
+ 
+
+}
+
+#field-message {
+width: 100%;
+min-height: 1rem;
+
+} 
+#buttons{
+ display:flex;
+ align-items: center;
+ justify-content: space-between;
+ 
+}
+#sub-button{
+    
+ margin-top:1rem;
+ width: 20%;
+ border-radius: 5px;
+ background-color: #1b4e5b;
+ color:white;
+ font-weight:bold;
+} 
+#reset-button{
+
+ margin-top:1rem;
+ width: 15%;
+ border-radius: 5px;
+ background-color: #1b4e5b;
+ color:white;
+ font-weight:bold;
+
+} 
+
+#clear-button{
+  
+  margin-top:1rem;
+  width:20%;
+  border-radius:5px;
+  background-color:#1b4e5b;
+  color:white;
+  font-weight:bold;
+  font-size:15px;
+
+} 
+#user-id{
+
+  flex:wrap;
+
+}
+#conversation div{
+
+  margin-top: 0.5rem;
+  width:100%;
+  color:#1b4e5b;
+  background:#e3f2fd;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border-radius:5px;
+  box-shadow:0 0 2px rgba(0,0,0,.5);
+  transform:scale(0) rotate(-12deg);
+  transform:scale(1) rotate(0); 
+  transition:all .25s;
+  margin-right:4rem;
+  overflow-wrap: break-word;
+  
+}
+#conversation h3{
+    margin-top: 1rem;
+    font-weight: bold;
+    font-size: 1rem;
+    
+}
+#conversation h6{
+    margin-top: 0.5rem;
+    font-size: 0.7rem;
+    font-style: italic;
+    
+  
+}
+#conversation p{
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+    scroll-behavior: auto;
+  
+}
+#bienvenue {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    align-self: flex-start;
+}
+
+#pre-send p {
+    font-style: italic;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+    display:inline-flex;
+    
+
+}
+#connected-list {
+
+    font-style: italic;
+    font-size: 1rem;
+    
+    
+}
+.BOOST {
+  
+  background-color:blue;
+  
+}
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+.lds-ellipsis div {
+  position: absolute;
+  top: 27px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #fff;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+  left: 6px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+  left: 6px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+  left: 26px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+  left: 45px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(19px, 0);
+  }
+}
+
+
+@keyframes blink {
+    /**
+     * At the start of the animation the dot
+     * has an opacity of .2
+     */
+    0% {
+      opacity: .2;
+    }
+    /**
+     * At 20% the dot is fully visible and
+     * then fades out slowly
+     */
+    20% {
+      opacity: 1;
+    }
+    /**
+     * Until it reaches an opacity of .2 and
+     * the animation can start again
+     */
+    100% {
+        
+      opacity: .2;
+
+    }
+}
+
+.saving span {
+    /**
+     * Use the blink animation, which is defined above
+     */
+    animation-name: blink;
+    /**
+     * The animation should take 1.4 seconds
+     */
+    animation-duration: 1.4s;
+    /**
+     * It will repeat itself forever
+     */
+    animation-iteration-count: infinite;
+    /**
+     * This makes sure that the starting style (opacity: .2)
+     * of the animation is applied before the animation starts.
+     * Otherwise we would see a short flash or would have
+     * to set the default styling of the dots to the same
+     * as the animation. Same applies for the ending styles.
+     */
+    animation-fill-mode: both;
+}
+
+.saving span:nth-child(2) {
+    /**
+     * Starts the animation of the third dot
+     * with a delay of .2s, otherwise all dots
+     * would animate at the same time
+     */
+    animation-delay: .2s;
+}
+
+.saving span:nth-child(3) {
+    /**
+     * Starts the animation of the third dot
+     * with a delay of .4s, otherwise all dots
+     * would animate at the same time
+     */
+    animation-delay: .4s;
+}
+
+
+
+

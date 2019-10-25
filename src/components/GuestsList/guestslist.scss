@@ -1,0 +1,106 @@
+@import 'src/styles/reset';
+@import 'src/styles/vars';
+
+@font-face {
+  font-family: 'alsscrp';
+  src: url('../../assets/fonts/alsscrp.ttf');
+}
+
+#guestslist {
+  @include Dashboard-width;
+  .nav {
+    @include Dashboard-nav;
+  }  
+  .guestsBoard {  
+    @include Dashboard;
+    font-size: 1.2em;    
+    form {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 95%;
+      margin: 1.5em auto;
+      font-weight: 600;
+      .inputs {
+        margin-top: 2em;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;              
+      }
+      .emailInput {
+        margin-top: 1em;
+      } 
+      .newsButtonMessage {
+        margin-left: 3em;
+        padding: 0 1em;
+        .newsletter {
+          width: 10em;
+          margin: 1em auto;
+          padding: .4em 1em;
+          color: #144956;
+          background-color: transparentize($color: #DEE4DD, $amount: 0.2);
+          border: 1px solid #144956;
+          border-radius: 15px;
+          font-family: 'Josefin Sans', sans-serif;
+          font-size: 1.2em;
+          cursor: pointer;
+        }
+      }
+     
+      .radios {
+        margin-top: 2em;
+      }
+      .guestTypeErrorTrue {
+        display: block;
+        margin-top: .5em;
+        color: rgb(238, 113, 133);
+      }
+      .guestTypeErrorFalse {
+        display: none;
+      }
+      .mariedSecond {
+        margin: 0 1.2em 0 1.5em;
+      }
+
+      button {
+        width: 20%;
+        margin: 2em auto;
+        color: #144956;
+        background-color: transparentize($color: #DEE4DD, $amount: 0.2);
+        border: 1px solid #144956;
+        border-radius: 15px;
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 1.2em;
+      }    
+    }
+    .list {
+      margin: 0 auto 1em;
+      font-size: 1em; 
+      font-family: 'Josefin Sans', sans-serif;
+      width: 70%;
+      min-height: 100px;
+      background-color: transparentize($color: #DEE4DD, $amount: 0.2);
+      list-style-type: decimal;
+      padding: 1em 2em;
+      border-radius: 15px;
+      border: 1px lightgrey solid;
+      box-shadow: 0 0 .5em rgba(87, 84, 84, 0.5);
+      .guests {
+        display: grid;
+        color: #144956;
+        grid-template-columns: 1fr 50fr 1fr;
+        width: 100%;   
+        text-align: left;   
+        font-style: italic;
+        font-weight: 800;
+        .deleteGuest {
+          color: #144956;
+          cursor: pointer;  
+        }
+      }         
+    }
+  }
+}
+
+
+

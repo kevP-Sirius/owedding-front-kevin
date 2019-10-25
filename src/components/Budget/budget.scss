@@ -1,0 +1,68 @@
+@import 'src/styles/reset';
+@import 'src/styles/vars';
+
+#budget {
+  width: 100%;
+  margin: 1em 2em 0 0;
+  
+  .budgetMenu {
+  width: 100%;
+  display: block;
+  font-size: 1em;
+  font-family: 'Josefin Sans', sans-serif;
+  border-radius: 10px;
+  background-color: transparentize($color: #DEE4DD, $amount: 0.2);
+  // font-weight: bolder; 
+  border: 1px solid #144956;
+  padding: 1em 0;
+  min-height: 200px;
+
+    .budgetTitle{
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 1em;
+      color: #144956;
+      margin-bottom: .8em;
+      border-bottom: 1px solid #144956;
+      padding-bottom: 1em;
+      // font-weight: 700;
+    }
+    .projectName {
+      font-size: 1.2em;
+      color: #144956;
+      font-style: italic;
+      font-weight: bolder;
+      font-family: 'Josefin Sans', sans-serif;
+    }
+    .budgetCorpus {
+      margin-top: 1.8em;
+    }
+    #budgetTotal, #budgetRestant {
+      margin-bottom: 1em;
+      font-weight: 600;
+    }
+    .dashIcons {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      .iconItem {
+        margin: 1em 1.5em 0.5em;
+      }
+    }
+    .providerInCart {
+      padding: 0 .4em;
+    }
+    .providerTheme {
+      color: red;
+      text-align: left;
+      margin-top: .6em;
+    }
+    .providerItem {
+      display: flex;
+      justify-content: space-between;
+      .deleteProvider {
+        color: rgb(238, 113, 133);
+        cursor: pointer;  
+      }
+    }
+  }
+}

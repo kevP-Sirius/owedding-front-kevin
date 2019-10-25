@@ -1,0 +1,25 @@
+@import 'src/styles/reset';
+@import 'src/styles/vars';
+
+#dashboard {
+  display: flex;
+  min-height: 500px;
+  width: 100%;
+  font-family: 'Josefin Sans', sans-serif;
+  margin-top: 5em;
+  background-image: url(../../assets/images/welcome.jpg);
+  background-size: 25em;
+  background-repeat: no-repeat;
+  background-position: top center;
+  
+  
+
+.dashRight {
+  //width: 900px;
+  margin : 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  font-family: 'Josefin Sans', sans-serif;
+  }
+}

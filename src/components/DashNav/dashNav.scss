@@ -1,0 +1,60 @@
+@import 'src/styles/reset';
+@import 'src/styles/vars';
+
+#dashNav {
+  width: 100%;
+  .dashMenu {
+  // height: 100%;
+  width: 100%;
+  display: block;
+  //margin-left: 10em;
+  font-size: 1.2em;
+  font-family: 'Josefin Sans', sans-serif;
+  border-radius: 10px;
+  background-color: transparentize($color: #DEE4DD, $amount: 0.2);
+  font-weight: bolder; 
+  border: 1px solid #144956;
+  padding: 1em 0;
+  min-height: 400px;
+    .projectName {
+      font-size: 1.5em;
+      color: #144956;
+      // text-transform: capitalize; 
+      font-style: italic;
+      font-weight: bolder;
+      font-weight: lighter;
+      font-family: 'Josefin Sans', sans-serif;
+      // font-family: 'Alex Brush', cursive, sans-serif;
+      // font-family: 'alsscrp', sans-serif;
+    }
+    .dashIcons {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      .iconItem {
+        margin: 1em 1.5em 0.5em;
+        .iconGuests {
+          background-image: url(../../assets/images/guest-list.png);
+          @include IconStyle;
+        }
+        .iconProviders {
+          background-image: url(../../assets/images/clothes.png);
+          @include IconStyle;
+        }
+        .iconTables {
+          background-image: url(../../assets/images/table.png);
+          @include IconStyle;
+        }
+        .iconAccount {
+          background-image: url(../../assets/images/account.png);
+          @include IconStyle;
+        }
+        .iconChat {
+          
+          background-image: url(../../assets/images/chat-icon2.png);
+          @include IconStyle;
+        }
+      }
+    }
+  }
+}

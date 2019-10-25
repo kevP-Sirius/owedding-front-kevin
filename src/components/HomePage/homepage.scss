@@ -1,0 +1,234 @@
+@import 'src/styles/reset';
+@import 'src/styles/vars';
+
+
+#homePageContainer {
+  width: 100%;
+  background-image: url(../../assets/images/BackgroundT.png);
+  background-size: 100%;
+  background-repeat: no-repeat; 
+  background-attachment: fixed;
+  border-image-slice: 1;
+  padding: 2em 5em;
+  font-size: 1em;
+  font-family: 'Josefin Sans', sans-serif;
+  color: #144956; 
+  z-index: 1;
+  @include respondTo(wide-phones) {
+    padding: 2em;
+  }
+  @include respondTo(phones) {
+    padding: 2em;
+  }
+  
+  .homePage {
+    background-image: url(../../assets/images/welcome.jpg);
+    background-size: 27%;
+    background-repeat: no-repeat;
+    background-position: top center;
+    margin-top: 2em;
+    @include respondTo(tablets) {
+      background-size: 47%;
+      margin-top: 0;
+
+    }
+    @include respondTo(wide-phones) {
+      background-size: 57%;
+      margin-top: 0;
+
+    }
+    @include respondTo(phones) {
+      background-size: 77%;
+      margin-top: 0;
+    }
+    
+    .parag {
+      padding-top: 8em;
+      font-size: 1.2em;
+      @include respondTo(tablets) {
+        padding-top: 5em;
+
+      }
+      @include respondTo(wide-phones) {
+        padding-top: 5em;
+      }
+      @include respondTo(phones) {
+        padding-top: 4em;
+      }
+
+    }
+    .lastParag {
+      padding-top: 1em;
+      font-size: 1.2em;
+      margin-bottom:2.5em;
+    }
+    .welcomeText2 {
+      margin-bottom: 2em;
+      margin-top: 2.5em;
+      font-size: 1.2em;
+    }
+
+    .handleButton {
+      @include buttonDefault;
+      position: relative;
+      color: #144956;
+      border: 1px solid #144956;
+      background-color:#DEE4DD;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 1em;
+      margin-bottom: 4em;
+      margin-top: 2em;
+
+      &:hover {
+        .iconHomeForButton {
+          animation: Icon-button-spin  0.4s linear;
+        }
+      }
+    }
+    
+    .homeIcons {
+      // display: flex;
+      // flex-direction: row;
+      // justify-content: center;
+      // align-items: center;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-gap: 2.5em;
+      margin: 2em auto 0;
+      width: 65%;
+      // min-height: 19em;
+      height: 100%;
+      font-size: 1em;
+      font-weight: 800;
+      @include respondTo(lg-desktops) {
+        width: 80%;
+        grid-gap: 2em;
+      }
+      @include respondTo(small-desktops) {
+        width: 100%;
+        grid-gap: 2em;
+      }
+      @include respondTo(tablets) {
+        width: 75%;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 2em;
+      }
+      @include respondTo(wide-phones) {
+        width: 80%;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 2em;
+      }
+      @include respondTo(phones) {
+        width: 80%;
+        grid-template-columns: 1fr;
+        grid-gap: 2em;
+      }
+      
+      .iconHome {
+        //margin: 2em 1em;
+        width: 100%;
+        height: 100%;
+        background-color: #DEE4DD;
+        border: 1px #144956 solid;
+        border-radius: 10px;
+        @include respondTo(tablets) {
+          margin-bottom: 1em;  
+        }
+        @include respondTo(wide-phones) {
+          width: 100%;        
+        }
+        @include respondTo(phones) {
+          width: 100%;
+        }
+
+        &:hover {
+          animation: Box-scale  ease; 
+          animation-duration: 1s;   
+        }
+        .imageprestataires {
+          @include itemImage;
+          background-image: url(../../assets/images/prestataires.jpg); 
+          padding-bottom: 7em;     
+        }
+        .imageguest {
+          @include itemImage;
+          background-image: url(../../assets/images/guests.jpg);
+          padding-bottom: 7em;      
+        }
+        .imageplantable {
+          @include itemImage;
+          background-image: url(../../assets/images/plantable.jpg); 
+          padding-bottom: 7em;          
+        }
+        .imagebudget {
+          @include itemImage;
+          background-image: url(../../assets/images/budget.jpg);
+          padding-bottom: 7em;          
+        }
+        .itemText {
+          font-size: 1.2em;
+          border-bottom: 1px #144956 solid;
+          //padding-bottom: 1em;
+          margin: 0 1em 1em; 
+          height: 3em;         
+          display: flex;
+          //flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+        .itemDescription {
+          padding: 0 1em 1em;
+          font-size: 1em;
+        }
+      }
+    }
+    .welcomeText {
+      padding-bottom: 1.5em;
+      padding-top: 8.5em;
+    }
+    .temoignages {
+      background-image: url(../../assets/images/temoignages.jpg);
+      background-size: 20em;
+      background-repeat: no-repeat;
+      background-position: top center;
+      width: 100%;
+      height: 180px;
+      @include respondTo(wide-phones) {
+        background-size: 57%;
+      }
+      @include respondTo(phones) {
+        background-size: 57%;
+      }
+    }
+    .carousel {
+      width: 65%;
+      margin: 8em auto 4em;
+      @include respondTo(phones) {
+        display: none;
+      }
+    }    
+  } 
+}
+
+@keyframes Box-scale {
+    from {
+      position: relative;
+    }
+    to {
+      position: relative;
+      bottom: 10px;
+    }
+  }
+
+@keyframes Icon-button-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+  
+

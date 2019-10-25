@@ -1,0 +1,63 @@
+@import 'src/styles/reset';
+@import 'src/styles/vars';
+
+@font-face {
+  font-family: 'alsscrp';
+  src: url('../../assets/fonts/alsscrp.ttf');
+}
+
+#showProviders {
+  @include Dashboard-width;
+  .navBudget {
+    @include Dashboard-nav;
+  } 
+  .providersBoard {
+    @include Dashboard;  
+    font-size: 1.2em;
+    .buttonProvider {
+      color: #144956;
+      background-color: #DEE4DD;
+      font-size: .8em;
+    }       
+  }
+  .providersCard {
+    width: 29%;
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: transparentize($color: #DEE4DD, $amount: 0.6);
+
+    .nameCard { //Nom des prestataires
+      font-size: .9em;
+      color: #144956;
+      
+      margin-bottom: .7em;
+    }
+    .contactCard {
+      font-size: .7em;
+      color:#144956;
+      text-align: center;
+    }
+    .contactCardPhone {
+      font-size: .8em;
+      font-weight: bold; 
+      color:#144956;
+      text-align: center;
+    }
+    .descriptionCard {
+      font-size: 1em;
+      text-align: center;
+      color: #144956;
+      margin-top: .8em;
+      
+    }
+    .tarifCard {
+      color: #144956;
+      font-size: 1em;
+      font-weight: bold;
+      
+    }
+    
+  }
+}
+
+
+

@@ -1,0 +1,97 @@
+@import 'src/styles/reset';
+@import 'src/styles/vars';
+
+@font-face {
+  font-family: 'Adine Kirnberg';
+  src: url('../../assets/fonts/AdineKirnberg-Alternate.ttf');
+}
+@font-face {
+  font-family: 'alsscrp';
+  src: url('../../assets/fonts/alsscrp.ttf');
+}
+// @font-face {
+//   font-family: 'Josefin Sans';
+//   src: url('../../assets/fonts/JosefinSans-Regular.ttf');
+// }
+
+#header {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: 2;
+  padding: 2em;
+  background-size: 50%; // a voir pour rendre UX
+  
+ 
+
+  .loginButton {
+    @include buttonDefault;
+    color: #144956;
+    // background-color:#DEE4DD;
+    background-color: transparentize($color: #DEE4DD, $amount: 0.3);
+    border: 1px solid #144956;
+    // font-family: 'EB Garamond', serif;
+    font-family: 'Josefin Sans', sans-serif;
+    // font-style: italic;
+    font-size: .9em;
+    position: absolute;
+    top: 4%;
+    right: 10%;
+    z-index: 2;
+  }
+
+  .logoutButton {
+    @include buttonDefault;
+    color: #144956;
+    background-color: transparentize($color: #DEE4DD, $amount: 0.3);
+    border: 1px solid #144956;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: .9em;
+    position: absolute;
+    top: 4%;
+    left: 76%;
+    z-index: 2;    
+    
+  }
+
+  .headerTitle { // A REVOIR CA VA PAS LE FAIRE LE STYLE
+  font-size: 8em;
+  font-style: italic;
+  text-align: center;
+  padding-top: 4rem;
+  // color: #CEADB9;
+  color: #144956;
+  // color: rgb(182, 190, 181);
+  // font-family: 'alsscrp', sans-serif;
+  font-family: 'Alex Brush', cursive;
+  text-shadow: 0 16px 8.896px #DEE4DD,0 -1px 1px rgb(126, 111, 124);
+  a {
+    width: 100%;
+  }
+  @include respondTo(tablets) {
+    font-size: 6em;
+  }
+  @include respondTo(wide-phones) {
+      font-size: 4em;
+  }
+  @include respondTo(phones) {
+    font-size: 3.5em;
+  }
+  // colr: transparentize($color: #144956, $amount: 0.9);
+  :hover {
+    text-decoration: none;
+    color: #D0ADBA;
+  }
+  }
+
+  h2 {
+    font-family: 'Adine Kirnberg', sans-serif;
+    font-size: 3em;
+  }
+
+}
+
+
+
+
+

@@ -1,0 +1,80 @@
+@import 'src/styles/reset';
+@import 'src/styles/vars';
+
+@font-face {
+  font-family: 'alsscrp';
+  src: url('../../assets/fonts/alsscrp.ttf');
+}
+
+#tableplan {
+  @include Dashboard-width;
+  .nav {
+    @include Dashboard-nav;
+  }
+  .guestsBoard {  
+    @include Dashboard;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+    "pro    1    2"
+    "pro    3    4"
+    "pro    5    6"
+    "pro    7    8"
+    "pro    9    10";
+    grid-gap: 1em;    
+    font-size: 1em;    
+    .list-1{
+      grid-area: pro;
+    }
+   
+    .list {
+      font-family: 'Josefin Sans', sans-serif;
+      color: #144956;
+      text-align: left;
+      width: 97%;
+      margin-right: 3%;
+      min-height: 160px;
+      background-color: transparentize($color: #DEE4DD, $amount: 0.2);
+      list-style-type: decimal;
+      padding: 1em 1em 1em 1.5em;
+      border-radius: 15px;
+      border: 1px lightgrey solid;
+      box-shadow: 0 0 .5em rgba(87, 84, 84, 0.5);
+      .listTitle {
+        font-family: 'Josefin Sans', sans-serif;
+        font-style: italic;
+        text-decoration: underline;
+      }
+      .guests {
+        border-radius: 3px;
+        margin: .5em 0;
+        display: grid;
+        grid-template-columns: 1fr 50fr 1fr;
+        width: 100%;   
+        text-align: left;    
+        font-style: italic;
+        font-weight: 800;
+        .deleteGuest {
+          color: rgb(238, 113, 133);
+          cursor: pointer;  
+        }
+      }         
+    }
+    .actionButton {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      color: #144956;
+      height: 160px;
+      border: 1px dashed #144956;
+      border-radius: 15px;
+
+    }
+  }
+}
+
+
+
+

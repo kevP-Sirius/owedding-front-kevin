@@ -1,0 +1,11 @@
+@import 'src/styles/reset';
+@import 'src/styles/vars';
+
+#page {
+  // background-color: $color-background-page;
+  min-height: 500px;
+  display: flex;  
+  justify-content: center;
+  align-items: center;
+  
+}

@@ -1,0 +1,30 @@
+#mentions-legales{
+  font-family: 'Josefin Sans', sans-serif;
+  color: #144956; 
+  display: block;
+  width: 75%;
+  height: 50%;
+
+  .legalMentionBigTitle{
+    font-weight: bolder;
+    margin: 3em;
+  }
+
+  .legalMentionTitle{
+  
+    font-weight: 600;
+    margin: 2em;
+  }
+
+  .legalMentionLilTitle{
+    margin: 1.5em;
+    text-decoration: underline;
+    font-weight: bold;
+  }
+  .legalMentionCorpus{ 
+    text-align: justify center;
+    font-weight: bolder;
+    margin-right: 10rem;
+    margin-left: 10rem;
+  }
+}

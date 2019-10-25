@@ -1,0 +1,90 @@
+
+
+$color-background-header: lightyellow;
+$color-background-page: rgb(241, 212, 216);
+$color-background-footer: lightgrey;
+$color-button: red;
+
+$font-header-h1: 'alsscrp', sans-serif;
+
+@mixin respondTo($_media) {
+  @if $_media == phones {
+    @media all and (max-width: 479px) { @content; }
+  }
+  @else if $_media == wide-phones {
+    @media all and (min-width: 480px) and (max-width: 767px) { @content; }
+  }
+  @else if $_media == tablets {
+    @media all and (min-width: 768px) and (max-width: 991px) { @content; }
+  }
+  @else if $_media == small-desktops {
+    @media all and (min-width: 992px) and (max-width: 1199px) { @content; }
+  }
+  @else if $_media == lg-desktops {
+    @media all and (min-width: 1200px) and (max-width: 1440px) { @content; }
+  }
+  @else if $_media == xlg-desktops {
+    @media all and (min-width: 1441px) and (max-width: 1920px) { @content; }
+  }
+}
+
+@mixin buttonDefault {
+  border-radius: 20px;   
+  color: $color-button;
+  background-color: rgb(192, 253, 255);    
+  min-width: 9%;
+}
+@mixin buttonForAuth {
+  color: #144956;
+  background-color:#DEE4DD;
+  border: 1px solid grey;
+  font-family: 'Josefin Sans', sans-serif;
+  border-radius: 30px;      
+  font-size: 1em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+@mixin itemImage {
+  border-bottom: 5px #144956 solid;
+  background-repeat: no-repeat;
+  width: 100%;
+  //height: 100px;  
+  background-size: cover;     
+  border-radius: 10px 10px 0 0;
+}
+
+//DashNav
+@mixin IconStyle {
+  margin: 0 auto .2em;
+  width: 2em;
+  height: 2em;
+  background-size: cover;
+}
+
+@mixin Dashboard {
+  min-height: 4em;
+    border: 1px solid #144956;
+    padding: 2em;
+    width: 77%;
+    font-family: 'Josefin Sans', sans-serif;
+    border-radius: 10px;
+    background-color: transparentize($color: #DEE4DD, $amount: 0.6);
+}
+
+@mixin Dashboard-nav {
+  width: 22%;
+  margin-right: 1%;
+}
+@mixin Dashboard-width {
+  display: flex;
+  width: 70%;
+  margin: 1em 0 0;
+}
+
+@mixin loading {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
