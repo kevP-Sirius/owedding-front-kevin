@@ -73,7 +73,7 @@ const Page = ({ logged }) => {
       {!logged && (
         <Redirect from="/dashboard" to="/" />
       )}
-      <Route path="/drawIt" component={DrawIt} />
+      <Route path="/dashboard/pictionnary" component={DrawIt} />
       <Route path="/dashboard/chat" component={Chat} />
       <Route path="/site-map" component={SiteMap} />
       <Route path="/privacy-policy" component={PrivacyPolicy} />

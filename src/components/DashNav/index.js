@@ -39,6 +39,12 @@ const DashNav = ({ projectName }) => (
             <div>Discutez avec vos invités </div>
           </div>
         </NavLink>
+        <NavLink to="/dashboard/pictionnary">
+          <div className="iconItem">
+            <div className="iconPictionnary" />
+            <div>Pictionnary</div>
+          </div>
+        </NavLink>
         <NavLink to="/dashboard/account">
           <div className="iconItem">
             <div className="iconAccount" />

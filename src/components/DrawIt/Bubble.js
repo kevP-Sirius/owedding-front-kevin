@@ -11,6 +11,7 @@ const Bubble =({name,message,hour})=>(
 </div>
 );
 
+
 Bubble.propTypes ={
   
  name: PropTypes.string.isRequired,

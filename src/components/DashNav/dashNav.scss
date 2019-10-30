@@ -54,6 +54,11 @@
           background-image: url(../../assets/images/chat-icon2.png);
           @include IconStyle;
         }
+        .iconPictionnary {
+          
+          background-image: url(../../assets/images/pictionnary.png);
+          @include IconStyle;
+        }
       }
     }
   }

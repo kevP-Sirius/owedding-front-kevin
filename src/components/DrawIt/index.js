@@ -8,7 +8,8 @@ import './drawIt.scss';
 import {
   drawSwitch ,drawSwitchOff,saveCanvas
 } from 'src/store/reducers/appReducer';
-
+import axios from 'axios';
+import querystring from 'query-string';
 
 
 
@@ -28,7 +29,7 @@ class DrawIt extends React.Component {
       colorStyle:'',
       wordChoiceStatus:'Choisir un mot',
       wordSelection:'',
-      wordPicked:'',
+      wordPicked:'Aucun',
       visibility:'hidden'
     
     };
@@ -66,10 +67,6 @@ class DrawIt extends React.Component {
 
     removePre_send=(name)=>{
       const { pre_sends } = this.state;
-      //methode Romain KO
-      // const index = pre_sends.index(name);
-      // console.log(index);
-      // const newPreSend = pre_sends.splice(index);
       const newPreSend = pre_sends.filter(text=>text.name!==name);
       this.setState( { pre_sends: newPreSend} );
     }
@@ -77,16 +74,7 @@ class DrawIt extends React.Component {
     addBubble = (name,message,hour) =>{
       const {chat:currentChatData} = this.state;
       const id=currentChatData.length+1;
-      //methode todolist KO
-      // if(this.state.chat ==[]){
-      //   const  id=1;
-      // }else{
-          
-      //     const ids = currentChatData.map(chatData=>chatData.id)
-      //     const MaxId = Math.max(...ids);
-      //     const id = MaxId+1;
-      // }
-    
+      
 
       console.log(id+'ceci est id(addbubble)');
       console.log(name+'ceci est name(addbubble)');
@@ -239,7 +227,7 @@ class DrawIt extends React.Component {
     
   componentDidMount()
   { 
-    let page = 'chat'
+    let page = 'DrawIt'
     localStorage.setItem('page',page);
     const url = new URL('https://owedding.fr/hub');
     
@@ -301,6 +289,18 @@ class DrawIt extends React.Component {
             {this.addPre_send(newData.name)};
             
           }
+          if(newData.canvasData===true)
+          {
+              console.log('testcanvas:ok');
+              console.log(newData.canvas);
+              
+              var image = new Image(500, 500);
+              image.src = newData.canvas;
+              var target =  document.getElementById('DrawIt').getContext('2d');
+              
+              target.drawImage(image, 0, 0);
+              
+          }
         }
           
       }
@@ -350,16 +350,23 @@ class DrawIt extends React.Component {
 
 					status:'Déssiner',
 					
-				});
+        });
+        const baseUrl = 'https://owedding.fr/admin';
 				store.dispatch(drawSwitchOff());
-				var target =  document.getElementById('DrawIt').getContext('2d');
-				console.log(target);
+				var target =  document.getElementById('DrawIt');
+        console.log('je suis la target:'+target);
+        var imgData =  target.toDataURL("image/png");
+        
+        console.log(imgData);
+        
 				var NewCanvas = {
-					canvas:target
+					canvas:imgData
 				}
-				const actionSaveCanvas = saveCanvas(NewCanvas);
-				store.dispatch(actionSaveCanvas);
-				console.log(NewCanvas)
+				const actionSaveCanvas = saveCanvas( NewCanvas);
+        store.dispatch(actionSaveCanvas);
+        console.log('canvas-value'+store.getState().appReducer.canvas);
+       
+			
 			}
 		
 		}
@@ -404,7 +411,7 @@ class DrawIt extends React.Component {
       console.log('wordPickerSelection')
       this.setState({
         wordSelection:value,
-          
+        wordPicked:value,
       });
     }else{
       this.setState({
@@ -425,7 +432,7 @@ class DrawIt extends React.Component {
       this.setState({
 
         visibility:`hidden`,
-        wordChoiceStatus:`Changer de mot`
+        wordChoiceStatus:`Changer de mot`,
           
       })
     }
@@ -489,6 +496,7 @@ class DrawIt extends React.Component {
         </form>
         </div>
 			<div id="game">
+       <div id="selectedWord"><p>Mot choisis:{this.state.wordPicked}</p></div>
 			<canvas
 			ref={this.canvasRef}
 			onMouseMove={this.handleMove}
