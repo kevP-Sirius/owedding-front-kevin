@@ -351,10 +351,10 @@ class DrawIt extends React.Component {
 					status:'Déssiner',
 					
         });
-        const baseUrl = 'https://owedding.fr/admin';
+       
 				store.dispatch(drawSwitchOff());
 				var target =  document.getElementById('DrawIt');
-        console.log('je suis la target:'+target);
+        
         var imgData =  target.toDataURL("image/png");
         
         console.log(imgData);

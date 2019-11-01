@@ -1,0 +1,38 @@
+#Upload{
+    display:flex;
+    margin-right: 50rem;
+    
+}
+#nav-left{
+    margin-left: 3rem;
+    padding-right:3rem;
+}
+
+#drop_file_zone {
+    
+	background-color: #EEE; 
+	border: #999 5px dashed;
+	width: 200%; 
+	height: 300px;
+	padding: 8px;
+    font-size: 33px;
+    margin-top:50%;
+	
+}
+#drag_upload_file {
+	width:100%;
+	margin:0 auto;
+}
+#drag_upload_file p {
+	text-align: center;
+}
+#drag_upload_file #selectfile {
+	display: none;
+}
+
+#box__dragndrop{
+background-color: #3fb1a1;
+height: 100px;
+width:50%;
+text-align: center;
+}

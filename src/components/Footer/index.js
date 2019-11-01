@@ -9,7 +9,6 @@ const Footer = () => (
   <div id="footer">  
     <Link className="logo" to="/">O'wedding</Link>
     <div className="center">
-      <Link className="footerLink" to="/drawIt">DrawIt</Link>
       <Link className="footerLink" to="/contact">Contact</Link>
       <Link className="footerLink" to="/AboutUs">À propos</Link>
       <Link className="footerLink" to="/site-map">Plan du site</Link>

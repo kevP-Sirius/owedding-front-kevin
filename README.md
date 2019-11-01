@@ -42,6 +42,9 @@ Maintenant il me reste encore à faire un projet de 0 pour m'entrainer à instal
 Je pense que je ne connais ou ne maitrise pas encore tout les concepte (sa c'est évident ) , mais je travail fortement pour m'améliorer avec des idées que je souhaite mettre en place . 
 Sur le composant DrawIt ne suis pas encore sur du concepte exacte pour l'instant  mais je travail pour le rendre le plus lisible et le plus  agréable que possible .
 
+Actuellement je travaille sur deux nouvelles fonctionnalité que je vais devoir implémenté côté front et côté back , à savoir la possibilité de stocker les images de son projet en ligne en les uploadant en drag and drop dans son espace et d'avoir accès à une gallery permettant de les afficher dans son espace personnel .
+j'ai crée les icones rajouté les les liens , j'ai commencé à mettre en place le css/html des composants et je vais travailler  le plus possible dans redux , j'ai crée les containers, j'ai crée un nouveau middleware pour l'occasion , un nouveau reducer également et je vais faire fonctionné ses deux nouvelles fonctionnalités grâce à cela je l'espère .
+
 Voici en somme mon expérience acquise en Réact et qui est toujours en cours d'évolution .
 
 Merci d'avoir pris le temps de lire ce petit Résumé .

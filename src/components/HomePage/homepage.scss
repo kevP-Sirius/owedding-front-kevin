@@ -201,7 +201,7 @@
       }
     }
     .carousel {
-      width: 65%;
+      width: 50%;
       margin: 8em auto 4em;
       @include respondTo(phones) {
         display: none;

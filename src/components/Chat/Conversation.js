@@ -8,7 +8,7 @@ const Conversation = ({ chat }) => (
         
        
     {chat.map(chatting=>(
-
+        
         <Bubble key={chatting.id}{...chatting}/>
     ))}
             

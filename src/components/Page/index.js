@@ -21,6 +21,8 @@ import PrivacyPolicy from 'src/components/PrivacyPolicy';
 import SiteMap from 'src/components/SiteMap';
 import UpdatePassword from 'src/containers/UpdatePassword';
 import Chat from 'src/containers/Chat';
+import Gallery from 'src/containers/Gallery';
+import Dropzone from 'src/containers/Dropzone';
 import DrawIt from 'src/components/DrawIt';
 import  { saveUser ,showGuests} from 'src/store/reducers/userReducer';
 import {
@@ -75,6 +77,8 @@ const Page = ({ logged }) => {
       )}
       <Route path="/dashboard/pictionnary" component={DrawIt} />
       <Route path="/dashboard/chat" component={Chat} />
+      <Route path="/dashboard/upload" component={Dropzone} />
+      <Route path="/dashboard/gallery" component={Gallery} />
       <Route path="/site-map" component={SiteMap} />
       <Route path="/privacy-policy" component={PrivacyPolicy} />
       <Route path="/cookie-management" component={CookieManagement} />

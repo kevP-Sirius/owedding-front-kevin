@@ -45,6 +45,18 @@ const DashNav = ({ projectName }) => (
             <div>Pictionnary</div>
           </div>
         </NavLink>
+        <NavLink to="/dashboard/gallery">
+          <div className="iconItem">
+            <div className="iconGallery" />
+            <div>Gallerie d'image</div>
+          </div>
+        </NavLink>
+        <NavLink to="/dashboard/upload">
+          <div className="iconItem">
+            <div className="iconUpload" />
+            <div>Upload d'image</div>
+          </div>
+        </NavLink>
         <NavLink to="/dashboard/account">
           <div className="iconItem">
             <div className="iconAccount" />

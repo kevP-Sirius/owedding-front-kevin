@@ -59,6 +59,17 @@
           background-image: url(../../assets/images/pictionnary.png);
           @include IconStyle;
         }
+
+        .iconGallery {
+          
+          background-image: url(../../assets/images/gallery-icon.png);
+          @include IconStyle;
+        }
+        .iconUpload {
+          
+          background-image: url(../../assets/images/upload-icon.png);
+          @include IconStyle;
+        }
       }
     }
   }
