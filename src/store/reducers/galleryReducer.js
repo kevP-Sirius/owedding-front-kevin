@@ -1,14 +1,14 @@
 // == Initial State
-const initialState = {
-    
-    projectImages: [],
-    file:'',
-    
+const initialState = {   
+  projectImages: [],
+  file: '',
+  basePath: '/var/www/html/Owedding_BACK/O_wedding-back-end/',
 };
   
   // == Types
   export const GET_IMAGES = 'GET_IMAGES';
   export const UPLOAD = 'UPLOAD';
+  export const LOAD_IMAGES = 'LOAD_IMAGES';
   
   // == Reducer
   const reducer = (state = initialState, action = {}) => {
@@ -25,6 +25,10 @@ const initialState = {
         file: action.file,
         
     };
+    case LOAD_IMAGES:
+      return {
+        ...state, 
+    };
       default:
         return state;
     }
@@ -39,6 +43,10 @@ const initialState = {
     type: UPLOAD,
     file
   });
+  export const loadImages = () => ({
+    type: LOAD_IMAGES,
+  });
+
  
  
  

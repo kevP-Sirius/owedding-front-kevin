@@ -5,6 +5,7 @@ import { Button, Form, Icon } from 'semantic-ui-react';
 import './guestslist.scss';
 import DashNav from 'src/containers/DashNav';
 import  { saveUser ,showGuests} from 'src/store/reducers/userReducer';
+import  { loadImages } from 'src/store/reducers/galleryReducer';
 import {
   load, finishLoad, closeLoginForm, errorLoginPseudo, errorLoginPassword,
   PASSWORD_RESET, passwordResetDone, passwordResetError,
@@ -35,7 +36,7 @@ const GuestsList = ({
     sendNewsletter();
   }
   useEffect(()=>{
-
+    store.dispatch(loadImages());
     console.log('coucou je suis le hook de guest');
     let page = 'guests';
     localStorage.setItem('page',page);

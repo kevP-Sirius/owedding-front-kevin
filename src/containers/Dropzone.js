@@ -15,8 +15,10 @@ import { upload } from 'src/store/reducers/galleryReducer';
  * Pas de data à transmettre ? const mapStateToProps = null;
  */
 const mapStateToProps = (state, ownProps) => ({
-  username:state.userReducer.username,
-  token:state.userReducer.token,
+  username: state.userReducer.username,
+  token: state.userReducer.token,
+  loading: state.appReducer.loading,
+  basePath:state.galleryReducer.basePath,
 });
 
 /* === Actions ===
