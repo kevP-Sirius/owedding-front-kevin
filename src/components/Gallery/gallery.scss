@@ -1,2 +1,27 @@
 @import 'src/styles/reset';
 @import 'src/styles/vars';
+
+#Gallery{
+    display:flex;
+    height: 100%;
+}
+
+#Board{
+    background-color: transparentize($color: #DEE4DD, $amount: 0.2);
+    margin-left: 3rem;
+    border: 1px solid #144956;
+    border-radius: 15px;
+    display: flex;
+    width: 500%;
+    overflow: auto;
+    height: 74rem;
+}
+
+#cards img{
+    border-radius: 5px;
+    height:300px;
+    width:200px;
+    margin-top: 2rem;
+    margin-left: 5rem;
+}
+

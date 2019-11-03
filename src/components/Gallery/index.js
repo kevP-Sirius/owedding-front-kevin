@@ -6,14 +6,21 @@ import PropTypes from 'prop-types';
 
 
 // == Composant
-const Gallery = ({ images, basePath, loadImages }) => {
+const Gallery = ({ images, basePath, loadImages, imagesStatus}) => {
   useEffect(() => {
    console.log(images);
+   console.log(imagesStatus);
+   if(imagesStatus===false){
+    loadImages();
+   }
+    
+   
     console.log('coucou je suis le hook de Gallery');
+    
   });
   return (
     <div id="Gallery">
-
+      
       <DashNav />
       <div id="Board">
         <div id="cards">
@@ -22,7 +29,7 @@ const Gallery = ({ images, basePath, loadImages }) => {
     
             <div id="card">
               <input type="hidden" id="card-id" name="card-id" value={image.id} />
-              <img src={basePath + image.src} alt={image.name} />
+              <img src={basePath + image.src } alt={image.name} height="400" width="300" />
             </div>
 
           ))}
@@ -36,8 +43,9 @@ const Gallery = ({ images, basePath, loadImages }) => {
   );
 };
 Gallery.propTypes = {
-  loadImages: PropTypes.func.isRequired,
   basePath: PropTypes.string.isRequired,
+  loadImages: PropTypes.func.isRequired,
+  imagesStatus: PropTypes.string.isRequired,
   images: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,

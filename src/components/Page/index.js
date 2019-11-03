@@ -24,17 +24,18 @@ import Chat from 'src/containers/Chat';
 import Gallery from 'src/containers/Gallery';
 import Dropzone from 'src/containers/Dropzone';
 import DrawIt from 'src/components/DrawIt';
-import  { saveUser ,showGuests} from 'src/store/reducers/userReducer';
+import  { saveUser ,showGuests ,connectFunc} from 'src/store/reducers/userReducer';
 import {
   load, finishLoad, closeLoginForm, errorLoginPseudo, errorLoginPassword,
   PASSWORD_RESET, passwordResetDone, passwordResetError,
 } from 'src/store/reducers/appReducer';
+import  { loadImages } from 'src/store/reducers/galleryReducer';
 import store from "../../store";
 
 // == Composant
 const Page = ({ logged }) => {
   useEffect(()=>{
-
+    
     console.log(localStorage.getItem('page'))
     console.log(store.getState().userReducer.logged);
     console.log('coucou je suis le hook du composant page');

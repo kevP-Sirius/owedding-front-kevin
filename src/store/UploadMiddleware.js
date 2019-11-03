@@ -2,19 +2,19 @@ import axios from 'axios';
 import querystring from 'query-string';
 
 import {
- UPLOAD, getImages, LOAD_IMAGES
+ UPLOAD, getImages, LOAD_IMAGES, loadImages
 } from 'src/store/reducers/galleryReducer';
 import {
   load, finishLoad,
 } from 'src/store/reducers/appReducer';
-
+import {
+  logout,
+} from 'src/store/reducers/userReducer';
 
 const Middleware = (store) => (next) => (action) =>{
   console.log('je suis le UploadMiddleware');
   next(action);
   const baseUrl = 'https://owedding.fr/admin';
-  
-
   switch (action.type) {
     case LOAD_IMAGES: {
       const data = querystring.stringify({
@@ -28,6 +28,7 @@ const Middleware = (store) => (next) => (action) =>{
         },
       }).then((response) => {
         console.log('voici response', response);
+        console.log('voici response', response.data.images_status);
         if(response.data.images_status==='done')
         {
           
@@ -36,13 +37,14 @@ const Middleware = (store) => (next) => (action) =>{
           };
           console.log(project);
           store.dispatch(getImages(project));
-        }else if (response.data.images_status!='done'){
-          alert('une erreur est survenue');
+        }else if (response.data.images_status!=='done'){
+          alert('session expiré');
+          store.dispatch(logout());
         } 
       }).catch((error) => {
         console.log('voici error', error);
       }).finally(() => {
-        
+       
       });
       break;
     }
@@ -64,7 +66,9 @@ const Middleware = (store) => (next) => (action) =>{
       }).catch((error) => {
         console.log('voici error', error);
       }).finally(() => {  
-        store.dispatch(finishLoad());      
+        store.dispatch(finishLoad()); 
+        store.dispatch(loadImages());
+            
       });
       break;
     }   

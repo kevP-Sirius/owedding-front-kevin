@@ -1,4 +1,4 @@
-import React from 'react';
+import React ,{ useEffect }from 'react';
 import PropTypes from 'prop-types';
 import { Card, Image, Button, Icon } from 'semantic-ui-react';
 
@@ -6,7 +6,7 @@ import { Card, Image, Button, Icon } from 'semantic-ui-react';
 import './showproviders.scss';
 import DashNav from 'src/containers/DashNav';
 import Budget from 'src/containers/Budget';
-
+import  { saveUser ,showGuests} from 'src/store/reducers/userReducer'
 
 const ShowProviders = ({ providers, chooseProvider }) => {
   const handleClick = (id) => () => {

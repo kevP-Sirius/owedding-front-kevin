@@ -35,6 +35,7 @@ const TablePlan = ({ lists, sort }) => {
     let page = 'tables'
     localStorage.setItem('page',page);
     console.log(localStorage.getItem('page'))
+    
    })
    
   

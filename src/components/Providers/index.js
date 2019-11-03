@@ -1,4 +1,4 @@
-import React from 'react';
+import React ,{ useEffect }from 'react';
 import PropTypes from 'prop-types';
 
 import './providers.scss';
@@ -11,6 +11,13 @@ const Providers = ({ showProvidersList }) => {
   const handleChange = (theme) => () => {
     showProvidersList(theme);
   };
+  useEffect(()=>{
+    console.log('coucou je suis le hook de providers');
+    let page = 'providers'
+    localStorage.setItem('page',page);
+    console.log(localStorage.getItem('page'))
+    
+   })
   return (
     <div id="providers">
       <div className="navBudget">

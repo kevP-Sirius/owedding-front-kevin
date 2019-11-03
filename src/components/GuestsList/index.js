@@ -36,12 +36,12 @@ const GuestsList = ({
     sendNewsletter();
   }
   useEffect(()=>{
-    store.dispatch(loadImages());
+    
     console.log('coucou je suis le hook de guest');
     let page = 'guests';
     localStorage.setItem('page',page);
     console.log(localStorage.getItem('page'));
-
+    
   })
   
 

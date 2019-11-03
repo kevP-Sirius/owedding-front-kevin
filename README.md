@@ -45,6 +45,8 @@ Sur le composant DrawIt ne suis pas encore sur du concepte exacte pour l'instant
 Actuellement je travaille sur deux nouvelles fonctionnalité que je vais devoir implémenté côté front et côté back , à savoir la possibilité de stocker les images de son projet en ligne en les uploadant en drag and drop dans son espace et d'avoir accès à une gallery permettant de les afficher dans son espace personnel .
 j'ai crée les icones rajouté les les liens , j'ai commencé à mettre en place le css/html des composants et je vais travailler  le plus possible dans redux , j'ai crée les containers, j'ai crée un nouveau middleware pour l'occasion , un nouveau reducer également et je vais faire fonctionné ses deux nouvelles fonctionnalités grâce à cela je l'espère .
 
+Désormais l'upload et l'affichage des fichiers se fais correctement maintenant que j'ai terminé le create et le read des fichiers je vais m'occuper du delete , il faudra que les fichiers selectionner sois non seulement supprimé de la bdd mais aussi du dossier symfony ou il est stocker il vas falloir que je recherche comment procéder pour cette dernière partie , actuellement les fichiers sont stocker dans un dossier auquel j'ai donné un acces via un alias apache et dans lequel je vais mettre un index afin que la liste des fichiers ne soit pas lisible par un navigateur . 
+
 Voici en somme mon expérience acquise en Réact et qui est toujours en cours d'évolution .
 
 Merci d'avoir pris le temps de lire ce petit Résumé .

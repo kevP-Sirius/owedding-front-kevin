@@ -7,14 +7,16 @@ import {
   errorMessageEmail, connectFunc, actionCreateProject, GUEST_SUBMIT, SHOW_GUESTS,
   showGuests, guestsList, emptyInput, DELETE_GUEST, SEND_PROVIDER, 
   putProvidersInState, CHOOSE_PROVIDER, DELETE_PROVIDER,
-  SEND_NEWSLETTER,  updatePasswordMessage,
+  SEND_NEWSLETTER,  updatePasswordMessage, logout
 } from 'src/store/reducers/userReducer';
 import {
   load, finishLoad, closeLoginForm, errorLoginPseudo, errorLoginPassword,
-  PASSWORD_RESET, passwordResetDone, passwordResetError,SAVE_CANVAS
+  PASSWORD_RESET, passwordResetDone, passwordResetError,SAVE_CANVAS,
 } from 'src/store/reducers/appReducer';
 import { guestsTable } from 'src/store/reducers/listReducer';
-
+import {
+  UPLOAD, getImages, LOAD_IMAGES, loadImages
+ } from 'src/store/reducers/galleryReducer';
 
 const Middleware = (store) => (next) => (action) => {
   
@@ -58,7 +60,7 @@ const Middleware = (store) => (next) => (action) => {
       break;
     }
     case AUTHENTICATE: {
-
+      
       const data = querystring.stringify({
         username: store.getState().userReducer.username,
         password: store.getState().userReducer.password,
@@ -92,12 +94,15 @@ const Middleware = (store) => (next) => (action) => {
           } else if (response.data.error === 'wrong password') {
             store.dispatch(errorLoginPassword());
           }
+         
+          
         })
         .catch((error) => {
           console.log(error);
         })
         .finally(() => {
           store.dispatch(finishLoad());
+          
         });
       break;
     }
@@ -145,6 +150,10 @@ const Middleware = (store) => (next) => (action) => {
             store.dispatch(passwordResetDone());
           } else if (response.data.error_status === 'unknown email') {
             store.dispatch(passwordResetError());
+          } else {
+            store.dispatch(logout());
+            alert('session expiré')
+            localStorage.clear();
           }
         })
         .catch((error) => {
@@ -174,6 +183,10 @@ const Middleware = (store) => (next) => (action) => {
           console.log(response);
           if (response.data.update_password_status === 'success') {
             store.dispatch(updatePasswordMessage());
+          }else {
+            store.dispatch(logout());
+            alert('session expiré')
+            localStorage.clear();
           }
         })
         .catch((error) => {
@@ -265,16 +278,23 @@ const Middleware = (store) => (next) => (action) => {
         },
       })
         .then((response) => {
-          console.log(response);
+          console.log(response.data.load_data_status);
           // console.log(response.data.project_data.Guest_list);
-          const project = {
-            guests: response.data.project_data.Guest_list,
-            budgetForecast: response.data.project_data.forecast_budget,
-            budgetCurrent: response.data.project_data.current_budget, 
-            providersAdded: response.data.project_data.provider_project_list,
-          };         
-          store.dispatch(guestsList(project)); 
-          store.dispatch(guestsTable(project));   
+          if(response.data.load_data_status==='success'){
+            const project = {
+              guests: response.data.project_data.Guest_list,
+              budgetForecast: response.data.project_data.forecast_budget,
+              budgetCurrent: response.data.project_data.current_budget, 
+              providersAdded: response.data.project_data.provider_project_list,
+            };         
+            store.dispatch(guestsList(project)); 
+            store.dispatch(guestsTable(project));   
+          }else {
+            store.dispatch(logout());
+            alert('session expiré')
+            localStorage.clear();
+          }
+         
   
         })
         .catch((error) => {

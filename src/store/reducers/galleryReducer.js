@@ -2,7 +2,8 @@
 const initialState = {   
   projectImages: [],
   file: '',
-  basePath: '/var/www/html/Owedding_BACK/O_wedding-back-end/',
+  imagesLoaded: false,
+  basePath: 'https://owedding.fr/images/',
 };
   
   // == Types
@@ -23,11 +24,13 @@ const initialState = {
       return {
         ...state,
         file: action.file,
+        imagesLoaded: false
         
     };
     case LOAD_IMAGES:
       return {
-        ...state, 
+        ...state,
+        imagesLoaded: true
     };
       default:
         return state;

@@ -16,7 +16,8 @@ import { getImages ,loadImages } from 'src/store/reducers/galleryReducer';
  */
 const mapStateToProps = (state, ownProps) => ({
   basePath: state.galleryReducer.basePath,
-  images : state.galleryReducer.projectImages
+  images : state.galleryReducer.projectImages,
+  imagesStatus: state.galleryReducer.imagesLoaded,
 });
 
 /* === Actions ===
