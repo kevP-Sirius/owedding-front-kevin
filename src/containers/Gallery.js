@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import Gallery from 'src/components/Gallery';
 
 // Action Creators
-import { getImages ,loadImages } from 'src/store/reducers/galleryReducer';
+import { getImages, loadImages, deleteImages  } from 'src/store/reducers/galleryReducer';
 
 /* === State (données) ===
  * - mapStateToProps retroune un objet de props pour le composant de présentation
@@ -18,6 +18,7 @@ const mapStateToProps = (state, ownProps) => ({
   basePath: state.galleryReducer.basePath,
   images : state.galleryReducer.projectImages,
   imagesStatus: state.galleryReducer.imagesLoaded,
+
 });
 
 /* === Actions ===
@@ -31,6 +32,9 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     loadImages: () => {
         dispatch(loadImages());
     },
+    deleteImages: (project) => {
+      dispatch(deleteImages(project));
+    }
 });
 
 // Container

@@ -4,12 +4,14 @@ const initialState = {
   file: '',
   imagesLoaded: false,
   basePath: 'https://owedding.fr/images/',
+  imageToDelete:'',
 };
   
   // == Types
   export const GET_IMAGES = 'GET_IMAGES';
   export const UPLOAD = 'UPLOAD';
   export const LOAD_IMAGES = 'LOAD_IMAGES';
+  export const DELETE_IMAGES = 'DELETE_IMAGES';
   
   // == Reducer
   const reducer = (state = initialState, action = {}) => {
@@ -32,6 +34,13 @@ const initialState = {
         ...state,
         imagesLoaded: true
     };
+
+    case DELETE_IMAGES:
+    return {
+      ...state,
+      imagesLoaded: false,
+      imageToDelete: action.project.imageId
+  };
       default:
         return state;
     }
@@ -48,6 +57,10 @@ const initialState = {
   });
   export const loadImages = () => ({
     type: LOAD_IMAGES,
+  });
+  export const deleteImages = (project) => ({
+    type: DELETE_IMAGES,
+    project
   });
 
  

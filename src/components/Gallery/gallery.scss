@@ -25,3 +25,20 @@
     margin-left: 5rem;
 }
 
+#delete-icon{
+    position:relative; 
+    z-index:1; 
+    left:289px; 
+    top:33px; 
+
+    cursor: pointer;
+}
+#card{
+    display:flex;
+}
+#delete-info{
+    visibility: hidden;
+}
+#delete-info:hover{
+    visibility: visible;
+}

@@ -2,7 +2,7 @@ import axios from 'axios';
 import querystring from 'query-string';
 
 import {
- UPLOAD, getImages, LOAD_IMAGES, loadImages
+ UPLOAD, getImages, LOAD_IMAGES, loadImages, DELETE_IMAGES
 } from 'src/store/reducers/galleryReducer';
 import {
   load, finishLoad,
@@ -71,7 +71,39 @@ const Middleware = (store) => (next) => (action) =>{
             
       });
       break;
-    }   
+
+      
+    } 
+    case DELETE_IMAGES: {
+      console.log('imageToDelete:'+ store.getState().galleryReducer.imageToDelete)
+      const data = querystring.stringify({
+        username: store.getState().userReducer.username,
+        token: store.getState().userReducer.token,
+        id: store.getState().galleryReducer.imageToDelete,
+      });         
+      axios.post(`${baseUrl}/api/project/images/delete`, data, {
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+          JWT: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXJjdXJlIjp7InB1Ymxpc2giOlsiKiJdfX0.NFCEbEEiI7zUxDU2Hj0YB71fQVT8YiQBGQWEyxWG0po',
+        },
+      }).then((response) => {
+        console.log('voici response', response);
+        console.log('voici response', response.data.delete_status);
+        if(response.data.delete_status==='done')
+        {        
+          console.log('deletion:done');
+         
+        }else if (response.data.images_status!=='done'){
+          console.log('deletion:failed');
+        } 
+      }).catch((error) => {
+        console.log('voici error', error);
+      }).finally(() => {
+       
+      });
+      break;
+      
+    } 
     default:
       //next(action);
   }
