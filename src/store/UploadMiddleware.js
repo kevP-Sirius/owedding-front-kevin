@@ -88,12 +88,13 @@ const Middleware = (store) => (next) => (action) =>{
         },
       }).then((response) => {
         console.log('voici response', response);
-        console.log('voici response', response.data.delete_status);
-        if(response.data.delete_status==='done')
+        console.log('voici response', response.data.images_status);
+        if(response.data.images_status==='deleted')
         {        
           console.log('deletion:done');
+          store.dispatch(loadImages());
          
-        }else if (response.data.images_status!=='done'){
+        }else if (response.data.images_status==='not found'){
           console.log('deletion:failed');
         } 
       }).catch((error) => {

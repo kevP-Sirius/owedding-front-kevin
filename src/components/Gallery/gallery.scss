@@ -4,32 +4,44 @@
 #Gallery{
     display:flex;
     height: 100%;
+    margin-right: 15%;
 }
-
-#Board{
+#nav {
+    
+    width: 300px;
+    
+}  
+#Board2{
+   
     background-color: transparentize($color: #DEE4DD, $amount: 0.2);
     margin-left: 3rem;
     border: 1px solid #144956;
     border-radius: 15px;
     display: flex;
-    width: 500%;
+    width: 100%;
+    min-width: 1000px;
+    height: 1000px;
     overflow: auto;
-    height: 74rem;
+   
+
 }
 
 #cards img{
     border-radius: 5px;
-    height:300px;
-    width:200px;
-    margin-top: 2rem;
+    height:600px;
+    width:600px;
+    margin-top: 5rem;
     margin-left: 5rem;
+    margin-right: 5rem;
+    
 }
+
 
 #delete-icon{
     position:relative; 
     z-index:1; 
-    left:289px; 
-    top:33px; 
+    left:691px; 
+    top:61px; 
 
     cursor: pointer;
 }

@@ -7,7 +7,7 @@ import LoadingForUpdateFile from 'src/components/LoadingForUpdateFile';
 // == Composant
 const Dropzone = ({ username, token, uploadFile, loading }) => {
   const handleDragEnter = () => (e) => {
-    console.log('dragEnter:ok')
+    console.log('dragEnter:ok');
     e.stopPropagation();
     e.preventDefault();
     document.getElementById('drop_file_zone').style.border = '2px solid #0B85A1'; 
@@ -51,14 +51,15 @@ const Dropzone = ({ username, token, uploadFile, loading }) => {
 
   return (
     <div id="Upload">
-      <div id="nav-left">
+      <div id="nav-zone">
         <DashNav />
       </div>
+
       <div id="Board">
         <div onDrop={handleDrop()} onDragEnter={handleDragEnter()} onDragOver={handleDragOver()} onDragLeave={handleDragLeave()} id="drop_file_zone" >
           <div id="drag_upload_file">
-            <div>{loading ? <LoadingForUpdateFile /> : 'Faite glisser vos fichiers' } </div>
-           
+            <div id="loading-zone">{loading ? <LoadingForUpdateFile /> : 'Faite glisser vos fichiers' }
+            </div>          
           </div>
         </div> 
     {/* div de fermedure de Board*/}  

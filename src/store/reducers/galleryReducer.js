@@ -5,6 +5,7 @@ const initialState = {
   imagesLoaded: false,
   basePath: 'https://owedding.fr/images/',
   imageToDelete:'',
+  curserZoom:true,
 };
   
   // == Types
@@ -12,7 +13,7 @@ const initialState = {
   export const UPLOAD = 'UPLOAD';
   export const LOAD_IMAGES = 'LOAD_IMAGES';
   export const DELETE_IMAGES = 'DELETE_IMAGES';
-  
+  export const CURSOR_SWITCH = 'CURSOR_SWITCH';
   // == Reducer
   const reducer = (state = initialState, action = {}) => {
     switch (action.type) {
@@ -41,6 +42,12 @@ const initialState = {
       imagesLoaded: false,
       imageToDelete: action.project.imageId
   };
+    case CURSOR_SWITCH:
+    return {
+      ...state,
+      curserZoom: !state.curserZoom,
+      
+  };
       default:
         return state;
     }
@@ -62,7 +69,10 @@ const initialState = {
     type: DELETE_IMAGES,
     project
   });
-
+  export const switchCursor = () => ({
+    type: CURSOR_SWITCH,
+    
+  });
  
  
  

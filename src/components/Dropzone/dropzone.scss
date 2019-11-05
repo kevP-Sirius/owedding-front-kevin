@@ -1,10 +1,12 @@
 #Upload{
-    display:flex;
+	display:flex;
+	height: 100%;
+    margin-right: 30%;
     
 }
-#nav-left{
+#nav-zone{
     margin-left: 3rem;
-    padding-right:3rem;
+	width: 200%;
 }
 
 #drop_file_zone {
@@ -31,4 +33,17 @@
 	display: none;
 }
 
+#Board{
+	background-color: transparentize($color: #DEE4DD, $amount: 0.2);
+    margin-left: 3rem;
+    border: 1px solid #144956;
+    border-radius: 15px;
+    display: flex;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+#loading-zone{
+	margin-top: 7rem;
+}
 

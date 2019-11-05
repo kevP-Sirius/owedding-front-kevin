@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import Gallery from 'src/components/Gallery';
 
 // Action Creators
-import { getImages, loadImages, deleteImages  } from 'src/store/reducers/galleryReducer';
+import { getImages, loadImages, deleteImages, switchCursor  } from 'src/store/reducers/galleryReducer';
 
 /* === State (données) ===
  * - mapStateToProps retroune un objet de props pour le composant de présentation
@@ -16,8 +16,9 @@ import { getImages, loadImages, deleteImages  } from 'src/store/reducers/gallery
  */
 const mapStateToProps = (state, ownProps) => ({
   basePath: state.galleryReducer.basePath,
-  images : state.galleryReducer.projectImages,
+  images: state.galleryReducer.projectImages,
   imagesStatus: state.galleryReducer.imagesLoaded,
+  zoomStatus: state.galleryReducer.curserZoom,
 
 });
 
@@ -29,12 +30,16 @@ const mapStateToProps = (state, ownProps) => ({
  * Pas de disptach à transmettre ? const mapDispatchToProps = {};
  */
 const mapDispatchToProps = (dispatch, ownProps) => ({
-    loadImages: () => {
-        dispatch(loadImages());
-    },
-    deleteImages: (project) => {
-      dispatch(deleteImages(project));
-    }
+
+  loadImages: () => {
+    dispatch(loadImages());
+  },
+  deleteImages: (project) => {
+    dispatch(deleteImages(project));
+  },
+  switchCursor: () => {
+    dispatch(switchCursor());
+  },
 });
 
 // Container
