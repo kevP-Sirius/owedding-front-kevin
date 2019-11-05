@@ -1,6 +1,5 @@
 #Upload{
     display:flex;
-    margin-right: 50rem;
     
 }
 #nav-left{
@@ -16,7 +15,9 @@
 	height: 300px;
 	padding: 8px;
     font-size: 33px;
-    margin-top:50%;
+	margin-top:50%;
+	margin-left: 4rem;
+	margin-right: 4rem;
 	
 }
 #drag_upload_file {
@@ -30,9 +31,4 @@
 	display: none;
 }
 
-#box__dragndrop{
-background-color: #3fb1a1;
-height: 100px;
-width:50%;
-text-align: center;
-}
+

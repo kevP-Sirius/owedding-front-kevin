@@ -152,7 +152,7 @@ const Middleware = (store) => (next) => (action) => {
             store.dispatch(passwordResetError());
           } else {
             store.dispatch(logout());
-            alert('session expiré')
+            
             localStorage.clear();
           }
         })
@@ -185,7 +185,7 @@ const Middleware = (store) => (next) => (action) => {
             store.dispatch(updatePasswordMessage());
           }else {
             store.dispatch(logout());
-            alert('session expiré')
+            
             localStorage.clear();
           }
         })
@@ -291,7 +291,6 @@ const Middleware = (store) => (next) => (action) => {
             store.dispatch(guestsTable(project));   
           }else {
             store.dispatch(logout());
-            alert('session expiré')
             localStorage.clear();
           }
          

@@ -31,13 +31,21 @@ const Dropzone = ({ username, token, uploadFile, loading }) => {
     console.log(files);
     for (let i = 0; i < files.length; i++) 
     {
-      const fd = new FormData();
-      fd.append('file', files[i]);
-      fd.append('username', username);
-      fd.append('token', token);
-      console.log(files[i]);
-      console.log(fd);
-      uploadFile(fd);
+      console.log(files[i].type==="image/png" || files[i].type==="image/jpeg"||files[i].type==="image/jpg");
+      if(files[i].type==="image/png" ||files[i].type==="image/jpeg"||files[i].type==="image/jpg"){
+        console.log(files[i].type);
+        const fd = new FormData();
+        fd.append('file', files[i]);
+        fd.append('username', username);
+        fd.append('token', token);
+        console.log(files[i]);
+        console.log(fd);
+        uploadFile(fd);
+        
+      }else{
+        alert('type non pris en charge(png,jpeg,jgp autorisé uniquement)')
+      }
+     
     }    
   };
 
@@ -49,7 +57,7 @@ const Dropzone = ({ username, token, uploadFile, loading }) => {
       <div id="Board">
         <div onDrop={handleDrop()} onDragEnter={handleDragEnter()} onDragOver={handleDragOver()} onDragLeave={handleDragLeave()} id="drop_file_zone" >
           <div id="drag_upload_file">
-            <p>{loading ? <LoadingForUpdateFile /> : 'Faite glisser vos fichiers' } </p>
+            <div>{loading ? <LoadingForUpdateFile /> : 'Faite glisser vos fichiers' } </div>
            
           </div>
         </div> 
