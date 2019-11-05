@@ -49,7 +49,9 @@ j'ai crée les icones rajouté les les liens , j'ai commencé à mettre en place
 
 Désormais l'upload et l'affichage des fichiers se fais correctement maintenant que j'ai terminé le create et le read des fichiers je vais m'occuper du delete , il faudra que les fichiers selectionner sois non seulement supprimé de la bdd mais aussi du dossier symfony ou il est stocker il vas falloir que je recherche comment procéder pour cette dernière partie , actuellement les fichiers sont stocker dans un dossier auquel j'ai donné un acces via un alias apache et dans lequel je vais mettre un index afin que la liste des fichiers ne soit pas lisible par un navigateur . 
 
-Désormais la requête pour la suppréssion s'effectue bien côté React et pars vers une route symfony que je vais crée et ou je vais vérifier l'id de l'image l'username et le token et verifier que l'id donné existe bien parmis les images du projet existant dans l'username envoyer et si oui la je ferais la suppression de la bdd et du dossier symfony .
+Désormais la requête pour la suppréssion s'effectue bien côté React et pars vers une route symfony ou les verifications du token et de l'existence de l'id de l'image dans le projet de l'utilisateur courant est effectué puis la suppression de la bdd et enfin la suppression du fichier en lui même .
+
+J'ai également mis au moins dans la gallerie la possibilité de pouvoir zoomer son image , je vais continuer de réfléchir sur comment améliorer la chose car ce n'est pas encore parfait , mais tout est fonctionnel pour le moment et  la mise à jours en ligne sera effectué  .
 
 Voici en somme mon expérience acquise en Réact et qui est toujours en cours d'évolution .
 
